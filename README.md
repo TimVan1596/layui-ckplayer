@@ -6,8 +6,8 @@ ckplayer版本： X2
 原插件 [larryms](https://gitee.com/layui_larryms/larryms)已经很久没有更新，且无法自定义设置，因此自己封装一份
 
 #### 软件架构
-参考ckplayer和layui的文档
-[ckplayer文档](https://www.ckplayer.com/manual/)
+请参考ckplayer和layui的文档  
+[ckplayer文档](https://www.ckplayer.com/manual/)  
 [layui插件文档](https://www.layui.com/doc/base/modules.html#extend)
 
 #### 安装教程
