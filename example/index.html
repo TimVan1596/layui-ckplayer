@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <title>layui-ckplayer 示例</title>
+        <link rel="stylesheet" href="layui/css/layui.css">
+    </head>
+    <body>
+        <ul class="layui-nav layui-bg-green" lay-filter="">
+            <li class="layui-nav-item"><a href="">layui-ckplayer 示例</a></li>
+        </ul>
+
+        <div class="layui-container">
+            <div class="layui-row">
+                <div class="layui-col-md12">
+                    <section class="layui-card">
+                        <div class="layui-card-body">
+                            <div class="video" id="video" style="width: 833px;height: 500px"></div>
+                        </div>
+                    </section>
+                </div>
+                <div>
+                    <div style="margin: 50px 0 20px;">
+                        <a style="text-decoration: none;    color: #333;"></a>
+                        <fieldset style="border: none;padding: 0;border-top: 1px solid #eee;">
+                            <legend style="    margin-left: 20px;padding: 0 10px; font-size: 22px; font-weight: 300;
+}">说明</legend>
+                        </fieldset>
+                    </div>
+                    <div class="site-text">
+                        <p>基于ckplayer视频播放器封装的，适用于layui的扩展组件</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="layui/layui.js"></script>
+        <script>
+            //config的设置是全局的
+            layui.config({
+                //存放拓展模块的根目录
+                base: 'lib/'
+            }).extend({
+                //设定模块别名
+                ckplayer: 'ckplayer/ckplayer'
+            }).use(['ckplayer'], function () {
+                var ckplayer = layui.ckplayer;
+                //定义视频资源地址
+                var videoUrl = "video_resource.mp4";
+                //由于X2的ckplayer需要用url请求方式获取配置json
+                //因此定义请求的根目录
+                var baseUrl = "lib/ckplayer/"
+
+                //定义一个变量：videoObject，用来做为视频初始化配置
+                var videoObject = {
+                    container: '#video',
+                    variable: 'player',
+                    video: videoUrl, //视频地址
+                    baseUrl: baseUrl //配置json所在目录
+                };
+                var player = new ckplayer(videoObject);//初始化播放器
+
+            });
+
+        </script>
+    </body>
+</html>
